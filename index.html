@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy 4th Birthday Lolia! ❄️✨💖</title>
+    <style>
+      /* Modern CSS Reset & Typography */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+
+      body {
+        /* Glittery Pink, Purple, and Blue Shimmer Gradient */
+        background: linear-gradient(
+          -45deg,
+          #ff7eb3,
+          #bf55ec,
+          #54a0ff,
+          #ff9ff3,
+          #a29bfe
+        );
+        background-size: 500% 500%;
+        animation: shimmerBG 14s ease infinite;
+        color: #ffffff;
+        overflow-x: hidden;
+        position: relative;
+        min-height: 100vh;
+      }
+
+      @keyframes shimmerBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Floating Animation Layer */
+      #particle-layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 10;
+      }
+
+      .particle {
+        position: absolute;
+        top: -40px;
+        animation: floatDown linear infinite;
+        opacity: 0.85;
+        user-select: none;
+      }
+
+      @keyframes floatDown {
+        0% {
+          transform: translateY(0) rotate(0deg) scale(0.8);
+          opacity: 1;
+        }
+        50% {
+          transform: translateY(50vh) rotate(180deg) scale(1.2);
+        }
+        100% {
+          transform: translateY(105vh) rotate(360deg) scale(0.8);
+          opacity: 0.1;
+        }
+      }
+
+      /* Header / Banner */
+      header {
+        text-align: center;
+        padding: 70px 20px 30px;
+        text-shadow:
+          0 0 15px rgba(255, 255, 255, 0.9),
+          0 0 30px rgba(191, 85, 236, 0.8);
+      }
+
+      header h1 {
+        font-size: 3.5rem;
+        letter-spacing: 2px;
+        color: #ffffff;
+        animation: pulseGlow 2.5s ease-in-out infinite alternate;
+      }
+
+      header p {
+        font-size: 1.6rem;
+        margin-top: 12px;
+        font-weight: 700;
+        color: #ffeaa7;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      @keyframes pulseGlow {
+        0% {
+          transform: scale(1);
+          filter: drop-shadow(0 0 5px #fff);
+        }
+        100% {
+          transform: scale(1.04);
+          filter: drop-shadow(0 0 20px #ff9ff3);
+        }
+      }
+
+      /* Hero Image Container for Lolia */
+      .lolia-hero-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      /* Pink Glittery Countdown Styling */
+      .countdown-section {
+        text-align: center;
+        margin: 20px auto 40px;
+        padding: 0 20px;
+      }
+
+      .countdown-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #fff0f6;
+        text-shadow:
+          0 0 10px rgba(255, 105, 180, 0.8),
+          0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .countdown-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .time-box {
+        background: rgba(255, 182, 193, 0.35); /* Soft Pink Glassmorphism */
+        backdrop-filter: blur(12px);
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        border-radius: 20px;
+        padding: 15px 20px;
+        min-width: 90px;
+        box-shadow:
+          0 8px 25px rgba(255, 105, 180, 0.3),
+          0 0 15px rgba(255, 255, 255, 0.5);
+        transition: transform 0.3s ease;
+      }
+
+      .time-box:hover {
+        transform: translateY(-4px);
+        background: rgba(255, 182, 193, 0.5);
+      }
+
+      .time-box span {
+        display: block;
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #ffffff;
+        text-shadow:
+          0 0 12px rgba(255, 192, 203, 1),
+          0 0 20px rgba(255, 105, 180, 0.8);
+      }
+
+      .time-box label {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: #fff0f6;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      @media (max-width: 600px) {
+        .time-box {
+          min-width: 70px;
+          padding: 10px 12px;
+        }
+        .time-box span {
+          font-size: 1.6rem;
+        }
+      }
+
+      .lolia-card {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+        border: 4px solid rgba(255, 255, 255, 0.7);
+        border-radius: 35px;
+        padding: 30px 25px;
+        text-align: center;
+        max-width: 420px;
+        width: 100%;
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.25),
+          0 0 30px rgba(255, 126, 179, 0.6);
+        transition: transform 0.3s ease;
+      }
+
+      .lolia-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .lolia-photo-placeholder {
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 6px solid #ffffff;
+        margin: 0 auto 20px;
+        display: block;
+        background-color: #ff7eb3;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+      }
+
+      /* Music Generator Section */
+      .song-section {
+        text-align: center;
+        margin: 40px auto 60px;
+        padding: 0 20px;
+      }
+
+      .btn-play {
+        background: linear-gradient(135deg, #ff9ff3, #feca57, #ff6b6b);
+        background-size: 200% 200%;
+        animation: btnShimmer 4s ease infinite;
+        border: none;
+        padding: 18px 42px;
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: #2d3436;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow:
+          0 10px 25px rgba(0, 0, 0, 0.25),
+          0 0 20px rgba(255, 255, 255, 0.8);
+        transition: all 0.3s ease;
+      }
+
+      @keyframes btnShimmer {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .btn-play:hover {
+        transform: scale(1.08);
+        box-shadow:
+          0 15px 30px rgba(0, 0, 0, 0.35),
+          0 0 30px rgba(255, 255, 255, 1);
+      }
+
+      /* Character Gallery */
+      .gallery-section {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 0 25px;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 35px;
+        text-shadow:
+          0 0 12px rgba(255, 255, 255, 0.9),
+          0 3px 6px rgba(0, 0, 0, 0.2);
+        color: #ffffff;
+      }
+
+      .character-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .char-card {
+        background: rgba(255, 255, 255, 0.22);
+        backdrop-filter: blur(10px);
+        border-radius: 24px;
+        padding: 18px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        transition: all 0.35s ease;
+      }
+
+      .char-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        background: rgba(255, 255, 255, 0.32);
+        box-shadow:
+          0 15px 35px rgba(0, 0, 0, 0.25),
+          0 0 20px rgba(255, 255, 255, 0.6);
+      }
+
+      .char-img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 18px;
+        margin-bottom: 14px;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+      }
+
+      .char-name {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #ffffff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Prayers & Goodwill Wishes */
+      .wishes-section {
+        max-width: 1000px;
+        margin: 70px auto;
+        padding: 0 25px;
+      }
+
+      .wishes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+        gap: 25px;
+      }
+
+      .wish-box {
+        background: rgba(0, 0, 0, 0.22);
+        border-left: 6px solid #ff9ff3;
+        border-radius: 16px;
+        padding: 28px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+      }
+
+      .wish-box:hover {
+        transform: translateY(-5px);
+        background: rgba(0, 0, 0, 0.28);
+      }
+
+      .wish-box h3 {
+        font-size: 1.4rem;
+        color: #ffeaa7;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .wish-box p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #f1f2f6;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 45px 20px;
+        background: rgba(0, 0, 0, 0.35);
+        margin-top: 80px;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+      }
+
+      /* Responsive Breakpoints */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2.6rem;
+        }
+        header p {
+          font-size: 1.2rem;
+        }
+        .wishes-grid {
+          grid-template-columns: 1fr;
+        }
+        .lolia-photo-placeholder {
+          width: 200px;
+          height: 200px;
+        }
+        .char-img {
+          height: 260px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Animated Particles Layer -->
+    <div id="particle-layer"></div>
+
+    <!-- Main Header -->
+    <header>
+      <h1>✨ Happy 4th Birthday, Lolia! ✨</h1>
+      <p>Celebrating Our Precious Princess on Her Special Day! 🎉💖</p>
+    </header>
+
+    <!-- Live Pink Countdown Timer Section -->
+    <section class="countdown-section">
+      <div class="countdown-title" id="countdownHeading">
+        ⏳ Countdown to Lolia's 4th Birthday! 🎈
+      </div>
+      <div class="countdown-container" id="countdownBox">
+        <div class="time-box">
+          <span id="days">00</span>
+          <label>Days</label>
+        </div>
+        <div class="time-box">
+          <span id="hours">00</span>
+          <label>Hours</label>
+        </div>
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <label>Minutes</label>
+        </div>
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <label>Seconds</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Container for Lolia -->
+    <section class="lolia-hero-section">
+      <div class="lolia-card">
+        <!-- Replace the src below with the filename of your picture of Lolia (e.g., lolia.jpg) -->
+        <img
+          src="IMG-20260723-WA0000.jpg"
+          alt="Birthday Girl Lolia"
+          class="lolia-photo-placeholder"
+          id="loliaImage"
+        />
+        <h2 style="font-size: 1.8rem">Princess Lolia 👑</h2>
+        <p
+          style="
+            margin-top: 6px;
+            color: #ffeaa7;
+            font-size: 1.1rem;
+            font-weight: 600;
+          "
+        >
+          Turning 4 Years Old Today!
+        </p>
+      </div>
+    </section>
+
+    <!-- Happy Birthday Song Generator -->
+    <section class="song-section">
+      <button class="btn-play" onclick="playBirthdaySong()">
+        🎶 Play Happy Birthday Song! 🎵
+      </button>
+    </section>
+
+    <!-- Character Gallery -->
+    <section class="gallery-section">
+      <h2 class="section-title">Royal Magical Friends ❄️🌺✨</h2>
+      <div class="character-grid">
+        <!-- Elsa Card -->
+        <div class="char-card">
+          <img
+            src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcR4qsYW37tuJKFL1p2P8g7GuU7q10VGNtRhyHsDuOhNIUh9VATR5tN7lS2OLsMlL4xr7fkddRBrbVnPLBM"
+            alt="Queen Elsa"
+            class="char-img"
+          />
+          <div class="char-name">Queen Elsa ❄️</div>
+        </div>
+
+        <!-- Anna Card -->
+        <div class="char-card">
+          <img
+            src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQyPrZNm2kWsJmctswQZ6SFjYfZLXIutcOh7sCP0CacinM3TtMd_Vri2erZceIa5o0j1VAYTaBYdFX6Sdc"
+            alt="Princess Anna"
+            class="char-img"
+          />
+          <div class="char-name">Princess Anna 🌻</div>
+        </div>
+
+        <!-- Olaf Card -->
+        <div class="char-card">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/6/6d/Olaf_from_Disney%27s_Frozen.png"
+            alt="Olaf"
+            class="char-img"
+          />
+          <div class="char-name">Olaf ☃️</div>
+        </div>
+
+        <!-- Kristoff Card -->
+        <div class="char-card">
+          <img
+            src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTaJLog-RuCWJePvX5QICvdmvLFzTn5NIz4OA42ryzShLufh4p1glFxeqYn3I92BUMAX-bGjMO1npl-8mQ"
+            alt="Kristoff"
+            class="char-img"
+          />
+          <div class="char-name">Kristoff & Sven 🏔️</div>
+        </div>
+
+        <!-- Moana Card -->
+        <div class="char-card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQwt8yV_bml-t28i_LNZvLbG634_SWbVk5BJosHfb2uWZxzr02rlszZhx8Rnz7uMOSMR6wPbgfxiDur7Is"
+            alt="Moana"
+            class="char-img"
+          />
+          <div class="char-name">Princess Moana 🌊</div>
+        </div>
+
+        <!-- Sofia Card -->
+        <div class="char-card">
+          <img
+            src="https://www.animationmagazine.net/wordpress/wp-content/uploads/Sofia-the-First-Royal-Magic-sc.png"
+            alt="Princess Sofia"
+            class="char-img"
+          />
+          <div class="char-name">Princess Sofia 🌟</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prayers & Goodwill Wishes Section -->
+    <section class="wishes-section">
+      <h2 class="section-title" style="text-align: center">
+        Prayers & Goodwill Wishes for Lolia 🙏💖
+      </h2>
+
+      <div class="wishes-grid">
+        <div class="wish-box">
+          <h3>🙏 Divine Health & Strength</h3>
+          <p>
+            Heavenly Father, we thank You for bringing Lolia safely to her 4th
+            birthday in health and vigor. We pray that You continually grant her
+            divine health, sound mind, and physical strength as she blossoms
+            every single day.
+          </p>
+        </div>
+
+        <div class="wish-box">
+          <h3>🛡️ Heavenly Protection</h3>
+          <p>
+            May the Almighty God encompass Lolia with angels of protection
+            wherever she goes. We pray that no evil or harm ever comes near her
+            dwelling, and that her steps are guided with safety and light
+            throughout her childhood.
+          </p>
+        </div>
+
+        <div class="wish-box">
+          <h3>💡 Wisdom & Bright Intellect</h3>
+          <p>
+            Lord, bless Lolia with superior wisdom, understanding, and
+            creativity beyond her years. May her young mind excel in learning,
+            discovering new wonders, and growing into a brilliant and
+            compassionate individual.
+          </p>
+        </div>
+
+        <div class="wish-box">
+          <h3>😊 Overflowing Joy & Laughter</h3>
+          <p>
+            May Lolia’s heart always overflow with pure happiness, peace, and
+            infectious laughter. May every single day of her 4th year be packed
+            with fun adventures, loving companionships, and cherished memories.
+          </p>
+        </div>
+
+        <div class="wish-box">
+          <h3>🌟 A Glorious Future</h3>
+          <p>
+            We declare that Lolia’s future is extraordinarily bright and filled
+            with greatness. May every door of honor, grace, and success open
+            smoothly for her as she grows under God's infinite favor.
+          </p>
+        </div>
+
+        <div class="wish-box">
+          <h3>💖 Abundant Love & Harmony</h3>
+          <p>
+            Happy 4th Birthday, sweet Lolia! May you always feel surrounded by
+            the warmth and unconditional love of your family. May your presence
+            continue to bring immense unity and joy to everyone around you.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Made with Endless Love for Lolia's 4th Birthday Celebration! 🎂✨💖</p>
+      <p>
+        May this special day be filled with joy, laughter, and unforgettable
+        memories!
+      </p>
+      <p>From your cousin Mimi</p>
+    </footer>
+
+    <!-- JavaScript logic -->
+    <script>
+      // 1. Floating Particles (Snowflakes, Hearts, Stars)
+      const particleLayer = document.getElementById("particle-layer");
+      const particles = ["❄️", "💖", "✨", "❄️", "💕", "⭐", "🌸"];
+
+      function spawnParticle() {
+        const el = document.createElement("div");
+        el.classList.add("particle");
+        el.innerText = particles[Math.floor(Math.random() * particles.length)];
+        el.style.left = Math.random() * 100 + "vw";
+        el.style.animationDuration = Math.random() * 3 + 4.5 + "s";
+        el.style.fontSize = Math.random() * 16 + 14 + "px";
+
+        particleLayer.appendChild(el);
+
+        setTimeout(() => {
+          el.remove();
+        }, 7500);
+      }
+      // Live Countdown Script (Target: July 25th)
+      function updateCountdown() {
+        const currentYear = new Date().getFullYear();
+        let targetDate = new Date(`July 25, ${currentYear} 00:00:00`).getTime();
+        const now = new Date().getTime();
+        let difference = targetDate - now;
+
+        // If July 25th has already passed this year, point to next year
+        if (difference < -86400000) {
+          targetDate = new Date(
+            `July 25, ${currentYear + 1} 00:00:00`,
+          ).getTime();
+          difference = targetDate - now;
+        }
+
+        if (difference > 0) {
+          const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+          );
+          const minutes = Math.floor(
+            (difference % (1000 * 60 * 60)) / (1000 * 60),
+          );
+          const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+          document.getElementById("days").innerText =
+            days < 10 ? "0" + days : days;
+          document.getElementById("hours").innerText =
+            hours < 10 ? "0" + hours : hours;
+          document.getElementById("minutes").innerText =
+            minutes < 10 ? "0" + minutes : minutes;
+          document.getElementById("seconds").innerText =
+            seconds < 10 ? "0" + seconds : seconds;
+        } else {
+          // Birthday Day Message
+          document.getElementById("countdownHeading").innerText =
+            "🎉 IT'S LOLIA'S BIRTHDAY TODAY! 🎈🎂✨";
+          document.getElementById("countdownBox").innerHTML =
+            "<h2 style='font-size: 2rem; color: #fff0f6; text-shadow: 0 0 15px #ff69b4;'>Happy 4th Birthday Lolia! 🎉</h2>";
+        }
+      }
+
+      // Run every second
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+
+      setInterval(spawnParticle, 250);
+
+      // 2. Synthesized Happy Birthday Tune (Web Audio API)
+      function playBirthdaySong() {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+
+        const ctx = new AudioCtx();
+
+        const notes = [
+          { note: 261.63, duration: 0.35 }, // C4
+          { note: 261.63, duration: 0.35 }, // C4
+          { note: 293.66, duration: 0.7 }, // D4
+          { note: 261.63, duration: 0.7 }, // C4
+          { note: 349.23, duration: 0.7 }, // F4
+          { note: 329.63, duration: 1.1 }, // E4
+
+          { note: 261.63, duration: 0.35 }, // C4
+          { note: 261.63, duration: 0.35 }, // C4
+          { note: 293.66, duration: 0.7 }, // D4
+          { note: 261.63, duration: 0.7 }, // C4
+          { note: 392.0, duration: 0.7 }, // G4
+          { note: 349.23, duration: 1.1 }, // F4
+
+          { note: 261.63, duration: 0.35 }, // C4
+          { note: 261.63, duration: 0.35 }, // C4
+          { note: 523.25, duration: 0.7 }, // C5
+          { note: 440.0, duration: 0.7 }, // A4
+          { note: 349.23, duration: 0.7 }, // F4
+          { note: 329.63, duration: 0.7 }, // E4
+          { note: 293.66, duration: 0.7 }, // D4
+
+          { note: 466.16, duration: 0.35 }, // A#4
+          { note: 466.16, duration: 0.35 }, // A#4
+          { note: 440.0, duration: 0.7 }, // A4
+          { note: 349.23, duration: 0.7 }, // F4
+          { note: 392.0, duration: 0.7 }, // G4
+          { note: 349.23, duration: 1.1 }, // F4
+        ];
+
+        let time = ctx.currentTime;
+
+        notes.forEach((item) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+
+          osc.type = "triangle";
+          osc.frequency.setValueAtTime(item.note, time);
+
+          gain.gain.setValueAtTime(0.25, time);
+          gain.gain.exponentialRampToValueAtTime(
+            0.001,
+            time + item.duration - 0.04,
+          );
+
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+
+          osc.start(time);
+          osc.stop(time + item.duration);
+
+          time += item.duration;
+        });
+      }
+    </script>
+  </body>
+</html>
